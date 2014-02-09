@@ -51,3 +51,8 @@ group :development, :test do
   gem 'pry-nav'
 end
 
+gem 'bootstrap-sass'
+gem 'haml'
+gem 'haml-rails'
+
+gem 'devise'

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+%html
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title= content_for?(:title) ? yield(:title) : "湖北银监局学分管理系统"
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    = stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    = yield(:head)
+  %body
+    = render 'layouts/header'
+    -#   .container
+    -#     .row
+    -#       #sidebar.span2
+    -#         = render 'layouts/menu'
+    -#       #content.span10
+    -#         = render 'layouts/path'
+    -#         = render 'layouts/messages'
+    -#         = yield
+    -#   #root_footer
+    -# = render 'layouts/footer'

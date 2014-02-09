@@ -1,0 +1,50 @@
+@import 'bootstrap';
+
+header {
+    background-color: rgb(199,222,231);
+    color: rgb(80,0,255);
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+
+    @extend .navbar;
+    /* @extend .navbar-fixed-top; */
+
+    nav#utility {
+      float: right
+    }
+    h3 { margin: 0;}
+}
+
+
+footer#page_footer {
+    background-color: #867c77;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 5px 10px;
+
+    p { align: center;}
+    ul {
+
+        li {
+            display: block;
+            padding: 2px;
+
+            a {
+               padding: 5px 10px;
+               &:link,
+               &:hover,
+               &:visited,
+               &.active {
+                   color: #fff;
+               }
+            }
+        }
+    }
+}
+
+table {
+  /* @extend .table, table-striped, .table-bordered; */
+  @extend .table, .table-hover, .table-striped, .table-bordered;
+}
