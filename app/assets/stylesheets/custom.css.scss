@@ -1,10 +1,14 @@
+$narbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
 @import 'bootstrap';
 
 header {
     background-color: rgb(199,222,231);
     color: rgb(80,0,255);
-    height: 40px;
-    overflow: hidden;
+    /* height: 40px; */
+    /* overflow: hidden; */
     margin-bottom: 20px;
     padding: 5px 5px;
 

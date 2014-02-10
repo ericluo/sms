@@ -1,8 +1,8 @@
-%header.navbar-header
+%header
   %nav#utility
     %p 
       - if user_signed_in?
-        %strong= "欢迎您，" + current_user.name
+        %strong= "欢迎您，" + current_user.email
         = link_to '[注销]', destroy_user_session_path, method: 'delete'
       - else
         = link_to '[登录]', new_user_session_path

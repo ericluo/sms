@@ -1,0 +1,20 @@
+%table
+  %thead
+    %tr
+      %th 部门名称
+      %th 排列次序
+      %th 操作
+
+  %tbody      
+    - @departments.each do |department|
+      %tr
+        %td= department.name
+        %td= department.order
+        %td
+          = link_to '编辑', [:edit, :admin, department]
+          = link_to '删除', [:admin, department], :confirm => '确定删除吗？', :method => :delete
+
+  -# = will_paginate @departments    
+%hr  
+.well  
+  = link_to '新增部门', new_department_path, class: "btn btn-large"

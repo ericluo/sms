@@ -1,0 +1,9 @@
+%header#page_header
+  %nav#utility.nav
+    - if user_signed_in?
+      %li 欢迎您，#{current_user.name}
+      %li= link_to '注销', destroy_user_session_path, :method=>'delete'
+    - else
+      %li= link_to '登录', new_user_session_path
+= link_to "湖北银监局学分管理系统", root_path, :class => 'brand'
+%ul.nav.pull-right

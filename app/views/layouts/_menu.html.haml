@@ -1,0 +1,48 @@
+%ul.nav.nav-tabs.nav-stacked
+  %li.nav-header.alert-info
+    %i.icon-tasks
+    我的工作台
+  %li 年度培训记录
+  %li 历史学分查询
+  %li 修改密码
+%ul.nav.nav-tabs.nav-stacked
+  %li.nav-header.alert-info
+    %i.icon-tasks
+    我的工作台
+  %li 年度培训记录
+  %li 历史学分查询
+  %li 修改密码
+-# - if user_signed_in?
+-#   .row
+-#     %ul.nav.nav-tabs.nav-stacked
+-#       %li.nav-header.alert-info
+-#         %i.icon-tasks
+-#         我的工作台
+-#       %li= link_to "年度培训记录", my_credits_path
+-#       -# %li= link_to "历史学分查询", trains_path(v: :query)
+-#       %li= link_to "修改密码", edit_password_path(current_user)
+
+-#   - if can? :create, Train
+-#     .row
+-#       %ul.nav.nav-tabs.nav-stacked
+-#         %li.nav-header.alert-info
+-#           %i.icon-edit
+-#           培训管理
+-#         %li= link_to "培训项目", trains_path
+-#   - if can? :manage, :all    
+-#     .row
+-#       %ul.nav.nav-tabs.nav-stacked
+-#         %li.nav-header.alert-info 
+-#           %i.icon-list-alt
+-#           统计分析
+-#         %li= link_to '年度报表', reports_path
+-#         %li= link_to '定制报表', new_report_path
+
+-#     .row
+-#       %ul.nav.nav-tabs.nav-stacked
+-#         %li.nav-header.alert-info
+-#           %i.icon-wrench
+-#           系统管理    
+-#         %li= link_to "用户管理", admin_users_path 
+-#         %li= link_to "部门管理", admin_departments_path 
+-#         %li= link_to "职务管理", admin_positions_path
