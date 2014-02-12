@@ -1,9 +1,15 @@
-%header
-  %nav#utility
-    %p 
-      - if user_signed_in?
-        %strong= "欢迎您，" + current_user.email
-        = link_to '[注销]', destroy_user_session_path, method: 'delete'
-      - else
-        = link_to '[登录]', new_user_session_path
-  %h3= link_to "湖北银监局学分管理系统", root_path
+%nav.navbar.nav-default.navbar-inverse
+  .container
+    .navbar-header
+      %h2.navbar-text= link_to "湖北银监局学分管理系统", root_path
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active= link_to '培训管理', train_courses_path
+        %li= link_to '年度培训记录', '#'
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li= link_to '[注销]', destroy_user_session_path, method: 'delete'
+          %p.navbar-text= "欢迎您，" + current_user.email
+        - else
+          %li= link_to '[登录]', new_user_session_path
+

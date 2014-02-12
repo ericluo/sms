@@ -1,4 +1,6 @@
 Sms::Application.routes.draw do
+  resources :train_courses
+
   resources :departments
 
   devise_for :users

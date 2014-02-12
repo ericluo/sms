@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @train_course.name
+%p
+  %b Start date:
+  = @train_course.start_date
+%p
+  %b Hours:
+  = @train_course.hours
+%p
+  %b Description:
+  = @train_course.description
+%p
+  %b Organizer:
+  = @train_course.organizer
+%p
+  %b Status:
+  = @train_course.status
+%p
+  %b Register:
+  = @train_course.register
+
+= link_to 'Edit', edit_train_course_path(@train_course)
+\|
+= link_to 'Back', train_courses_path

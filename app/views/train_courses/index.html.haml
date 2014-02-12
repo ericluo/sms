@@ -1,0 +1,31 @@
+%h1 培训课程
+
+%table
+  %tr
+    %th Name
+    %th Start date
+    %th Hours
+    %th Description
+    %th Organizer
+    %th Status
+    %th Register
+    %th
+    %th
+    %th
+
+  - @train_courses.each do |train_course|
+    %tr
+      %td= train_course.name
+      %td= train_course.start_date
+      %td= train_course.hours
+      %td= train_course.description
+      %td= train_course.organizer
+      %td= train_course.status
+      %td= train_course.register
+      %td= link_to 'Show', train_course
+      %td= link_to 'Edit', edit_train_course_path(train_course)
+      %td= link_to 'Destroy', train_course, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to '新建培训课程', new_train_course_path, class: 'btn btn-primary active'

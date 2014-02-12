@@ -1,0 +1,28 @@
+= form_for @train_course, html: {role: 'form', class: 'form-horizontal'} do |f|
+  - if @train_course.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@train_course.errors.count, "error")} prohibited this train_course from being saved:"
+      %ul
+        - @train_course.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label '培训名称'
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label '培训日期'
+    = f.date_select :start_date, class: 'form-control'
+  .form-group
+    = f.label '学时'
+    .input-group
+      = f.text_field :hours, class: 'form-control'
+      %span.input-group-addon 小时
+  .form-group
+    = f.label '组织单位'
+    = f.text_field :organizer, class: 'form-control'
+  .form-group
+    = f.label '备注说明'
+    = f.text_area :description, class: 'form-control'
+  .actions
+    = f.submit '保存', class: 'btn btn-primary active'
+    = link_to '返回', train_courses_path, class: 'btn btn-default active'
