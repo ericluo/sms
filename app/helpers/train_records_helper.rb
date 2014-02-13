@@ -1,0 +1,2 @@
+module TrainRecordsHelper
+end

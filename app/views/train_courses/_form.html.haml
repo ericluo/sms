@@ -25,6 +25,9 @@
   .form-group
     = f.label '备注说明'
     = f.text_area :description, class: 'form-control'
+  .form-group
+    = f.label '培训人员'
+    = select_tag(:attender_ids, options_from_collection_for_select(User.all, "id", "email"), multiple: true)
   .actions
     = f.submit '保存', class: 'btn btn-primary active'
     = link_to '返回', train_courses_path, class: 'btn btn-default active'

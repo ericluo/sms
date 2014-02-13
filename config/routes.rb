@@ -1,5 +1,9 @@
 Sms::Application.routes.draw do
-  resources :train_courses
+  resources :train_records
+
+  resources :train_courses do
+    resources :train_records
+  end
 
   resources :departments
 

@@ -1,0 +1,16 @@
+= form_for @train_record do |f|
+  - if @train_record.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@train_record.errors.count, "error")} prohibited this train_record from being saved:"
+      %ul
+        - @train_record.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :train_course
+    = f.text_field :train_course
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions
+    = f.submit 'Save'

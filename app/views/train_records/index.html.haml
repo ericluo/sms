@@ -1,0 +1,21 @@
+%h1 Listing train_records
+
+%table
+  %tr
+    %th Train course
+    %th User
+    %th
+    %th
+    %th
+
+  - @train_records.each do |train_record|
+    %tr
+      %td= train_record.train_course
+      %td= train_record.user
+      %td= link_to 'Show', train_record
+      %td= link_to 'Edit', edit_train_record_path(train_record)
+      %td= link_to 'Destroy', train_record, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Train record', new_train_record_path

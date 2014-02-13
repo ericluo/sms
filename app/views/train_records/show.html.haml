@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Train course:
+  = @train_record.train_course
+%p
+  %b User:
+  = @train_record.user
+
+= link_to 'Edit', edit_train_record_path(@train_record)
+\|
+= link_to 'Back', train_records_path
