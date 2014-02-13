@@ -1,7 +1,6 @@
-= form_for @train_course, html: {role: 'form', class: 'form-horizontal'} do |f|
+= form_for @train_course, html: {role: 'form'} do |f|
   - if @train_course.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@train_course.errors.count, "error")} prohibited this train_course from being saved:"
       %ul
         - @train_course.errors.full_messages.each do |msg|
           %li= msg
@@ -12,6 +11,9 @@
   .form-group
     = f.label '培训日期'
     = f.date_select :start_date, class: 'form-control'
+  .form-group
+    = f.label '学分'
+    = f.text_field :points, class: 'form-control'
   .form-group
     = f.label '学时'
     .input-group

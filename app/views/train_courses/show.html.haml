@@ -1,27 +1,30 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b 培训名称:
   = @train_course.name
 %p
-  %b Start date:
+  %b 培训时间:
   = @train_course.start_date
 %p
-  %b Hours:
+  %b 学分:
+  = @train_course.points
+%p
+  %b 课时:
   = @train_course.hours
 %p
-  %b Description:
+  %b 备注:
   = @train_course.description
 %p
-  %b Organizer:
+  %b 组织单位:
   = @train_course.organizer
 %p
-  %b Status:
+  %b 状态:
   = @train_course.status
 %p
-  %b Register:
-  = @train_course.register
+  %b 提交人:
+  = @train_course.register.email
 
-= link_to 'Edit', edit_train_course_path(@train_course)
-\|
-= link_to 'Back', train_courses_path
+.btn-group
+  = link_to '编辑', edit_train_course_path(@train_course), class: 'btn btn-default'
+  = link_to '返回', train_courses_path, class: 'btn btn-default'

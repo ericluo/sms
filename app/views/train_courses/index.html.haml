@@ -2,29 +2,29 @@
 
 %table
   %tr
-    %th Name
-    %th Start date
-    %th Hours
-    %th Description
-    %th Organizer
-    %th Status
-    %th Register
-    %th
-    %th
+    %th 培训名称
+    %th 培训时间
+    %th 学分
+    %th 课时
+    %th 组织单位
+    %th 状态
+    %th 提交人
     %th
 
   - @train_courses.each do |train_course|
     %tr
       %td= train_course.name
       %td= train_course.start_date
+      %td= train_course.points
       %td= train_course.hours
-      %td= train_course.description
       %td= train_course.organizer
       %td= train_course.status
-      %td= train_course.register
-      %td= link_to 'Show', train_course
-      %td= link_to 'Edit', edit_train_course_path(train_course)
-      %td= link_to 'Destroy', train_course, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= train_course.register.email
+      %td
+        = link_to '学员登记', '#'
+        = link_to '查看', train_course
+        = link_to '编辑', edit_train_course_path(train_course)
+        = link_to '删除', train_course, :method => :delete, :data => { :confirm => '删除课程后，改课程学分记录也一并删除，确定删除吗?' }
 
 %br
 

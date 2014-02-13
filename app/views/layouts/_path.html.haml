@@ -1,7 +1,5 @@
 - if @breadcrumbs.present?
-  %ul.breadcrumb.menu.clearfix
+  %ol.breadcrumb
     - @breadcrumbs[0..-2].each do |title, url|
-      %li
-        = link_to(h(title), url) 
-        %span.divider >
+      %li= link_to(h(title), url) 
     %li.active= @breadcrumbs.last.first

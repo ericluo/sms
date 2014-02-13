@@ -15,17 +15,9 @@
     = render 'layouts/header'
     .container
       .row
-        = render 'layouts/path'
-        = render 'layouts/messages'
-        = yield
+        #sidebar.col-md-3
+        #content.col-md-9
+          = render 'layouts/path'
+          = render 'layouts/messages'
+          = yield
     = render 'layouts/footer'
-    -#   .container
-    -#     .row
-    -#       #sidebar.span2
-    -#         = render 'layouts/menu'
-    -#       #content.span10
-    -#         = render 'layouts/path'
-    -#         = render 'layouts/messages'
-    -#         = yield
-    -#   #root_footer
-    -# = render 'layouts/footer'
